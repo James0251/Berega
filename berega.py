@@ -7,7 +7,18 @@ domain = 'beregaonline_tutaev'
 count = 100
 offset = 0
 
-while offset < 100:
+response = requests.get('https://api.vk.com/method/wall.get',
+                        params={
+                            'access_token': token,
+                            'v': version,
+                            'domain': domain,
+                            'count': 1,
+                            'offset': offset
+                        })
+
+post_count = response.json()['response']['count']
+
+while offset < post_count:
     response = requests.get('https://api.vk.com/method/wall.get',
                             params={
                                 'access_token': token,
