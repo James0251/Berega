@@ -1,5 +1,6 @@
 import requests
 import time
+import re
 
 token = 'c38aa09bc38aa09bc38aa09b74c3e44553cc38ac38aa09b9d84b30e048f8ec39a7eaba6'
 version = 5.103
@@ -29,7 +30,11 @@ while offset < post_count:
                             })
     offset += 100
     data = response.json()['response']['items']
-    print(data)
+    for i in data:
+        string = i['text']
+        matched_string = re.search('#администрацияТМР', string)
+        if matched_string != None:
+            print(string)
     time.sleep(0.5)
 
 
