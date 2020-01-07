@@ -2,7 +2,7 @@ import requests
 import time
 import re
 
-token = '456058734560587345605873f8450ebdbb44560456058731b7305a82c940e0aa7b825bf'
+token = 'c6b3e957c6b3e957c6b3e9578dc6dd1062cc6b3c6b3e95798a7bb0603b5aabb2c8bdf09'
 version = 5.103
 domain = 'beregaonline_tutaev'
 count = 100
